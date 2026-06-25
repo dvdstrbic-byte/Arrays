@@ -1,28 +1,46 @@
 function calcular(){
+let edades=[
+    parseInt(document.getElementById("e1").value),
+    parseInt(document.getElementById("e2").value),
+    parseInt(document.getElementById("e3").value),
+    parseInt(document.getElementById("e4").value),
+    parseInt(document.getElementById("e5").value),
+    parseInt(document.getElementById("e6").value),
+    parseInt(document.getElementById("e7").value),
+    parseInt(document.getElementById("e8").value)
+];
 
-    let vector = [];
-    let suma = 0;
-    let suma36 = 0;
-    let mayores50 = 0;
+if(edades.some(isNaN)){
+    alert("Debe completar todas las edades");
+        return;
+}
 
-    for(let i=0;i<8;i++){
+let suma=0;
+let sumaMayores36=0;
+let mayores50=0;
 
-        vector[i] = parseInt(prompt("Ingrese las ventas realizadas por los 8 vendedores."));
+for(let i=0; i<edades.length; i++){
 
-        suma += vector[i];
+    suma += edades[i];
 
-        if(vector[i] > 36){
-            suma36 += vector[i];
-        }
+if(edades[i]>36){
+        sumaMayores36 += edades[i];
+}
 
-        if(vector[i] > 50){
-            mayores50++;
-        }
+if(edades[i]>50){
+        mayores50++;
     }
+}
 
-    document.getElementById("resultado").innerHTML =
-    `ventas de vendedores: ${vector}<br>
-    Total de ventas: ${suma}<br>
-    Total de ventas mayores a 36: ${suma36}<br>
-    Cantidad de vendedores que vendieron mas de 50: ${mayores50}`;
+let promedio=suma/edades.length;
+
+    document.getElementById("resultado").innerHTML = `
+        <h3>Resultados</h3>
+
+        Edades ingresadas: ${edades.join(", ")}<br><br>
+        Suma total de edades: ${suma}<br>
+        Promedio de edades: ${promedio.toFixed(2)}<br>
+        Suma de edades mayores a 36 años: ${sumaMayores36}<br>
+        Cantidad de personas mayores a 50 años: ${mayores50}
+    `;
 }

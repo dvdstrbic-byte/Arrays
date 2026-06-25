@@ -2,15 +2,33 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio 1</title>
+    <title>Alturas</title>
     <link rel="stylesheet" href="../ESTILOS/estilos1.css">
 </head>
 <body>
-    <h1>Promedio de Alturas</h1>
 
-    <button onclick="calcular()">Ingresar Alturas</button>
+    <h1>Alturas de Personas</h1>
 
-    <div id="resultado"></div>
+    <div class="contenedor">
+        <p>Ingresar alturas (en centimetros):</p>
+
+        <label for="numero">Persona 1:</label>
+            <input type="number" id="h1">
+        <label for="numero">Persona 2:</label>
+            <input type="number" id="h2">
+        <label for="numero">Persona 3:</label>
+            <input type="number" id="h3">
+        <label for="numero">Persona 4:</label>
+            <input type="number" id="h4">
+        <label for="numero">Persona 5:</label>
+            <input type="number" id="h5">
+    </div>
+
+     <div id="resultado"></div>
+
+        <input type="submit" value="Calcular" onclick="calcular()">
+
+    </div>
 
     <script src="../SCRIPT/script1.js"></script>
 </body>
